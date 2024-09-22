@@ -12,12 +12,10 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - uses: docker/setup-buildx-action@master
+    - run: docker login -u luting王 -p ${{ secrets.DOCKER_PASSWORD }} $REGISTRY
     - run: |
         image=$(head -n 1 docker.txt)
-        new_image=$REGISTRY/wangluting/$(basename $image)
-
-        docker login -u luting王 -p ${{ secrets.DOCKER_PASSWORD }} $REGISTRY
-
+        new_image=$REGISTRY/wangluting/${image//\//-}
         docker pull $image
         docker tag $image $new_image
         docker push $new_image
