@@ -1,3 +1,4 @@
+ubuntu:24.04
 pytorch/pytorch:2.4.1-cuda11.8-cudnn9-devel
 pytorch/pytorch:2.4.1-cuda12.4-cudnn9-devel
 nvidia/cuda:12.6.1-cudnn-devel-ubuntu24.04
